@@ -13,10 +13,13 @@ io.on("connection", (socket) => {
     //Send message to the client
     console.log(`Socket Connected`, socket.id);
     socket.on("room:join", data => {
-        const{email ,room}=data
-        emailToSocketIdMap.set(email, socket.id)
-        socketIdtoEmailMap.set(socket.id , email);
 
-        io.to(socket.id).emit("room:join" , data)
+        const{email ,room}=data;
+        emailToSocketIdMap.set(email, socket.id);
+        socketIdtoEmailMap.set(socket.id , email);
+        //Before joining the room --> exisiting user
+        io.to(room).emit('user:joined', {email , id: socket.id});
+        socket.join(room);
+        io.to(socket.id).emit("room:join" , data);
     })
 })

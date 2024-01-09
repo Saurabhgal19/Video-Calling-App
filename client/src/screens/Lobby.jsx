@@ -1,5 +1,6 @@
 import React, { useCallback, useEffect, useState } from 'react'
 import { useSocket } from '../context/SocketProvider';
+import { useNavigate } from 'react-router-dom';
 
 export const Lobby = () => {
 
@@ -7,6 +8,7 @@ export const Lobby = () => {
   const [room ,setRoom] = useState("");
 
   const socket = useSocket();
+  const navigate = useNavigate();
   
   //console.log(socket)
 
@@ -17,15 +19,21 @@ export const Lobby = () => {
   [email,room, socket]);
 
   const handleJoinRoom = useCallback((data) => {
-      const {email ,room} = data
+      const {email ,room} = data;
+
+      //console.log("Email and Room", email , room);
+
+      //navigate to Room Page 
+      navigate(`/room/${room}`)
   },[])
 
 
   useEffect(()=>{
     //room:join=> Event
-    socket.on('room:join', data => {
-      console.log(`Data from Backend ${data}`);
-    });
+    socket.on('room:join', handleJoinRoom);
+    return () => {
+      socket.off('room:join', handleJoinRoom)
+    }
   },[socket, handleJoinRoom]);
 
   return (
