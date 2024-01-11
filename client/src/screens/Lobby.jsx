@@ -37,28 +37,35 @@ export const Lobby = () => {
   },[socket, handleJoinRoom]);
 
   return (
-    <div>
-        <h1>Lobby</h1>
-        <form onSubmit={handleSubmitForm}>
+    <div className='flex flex-col justify-center items-center h-full '>
+        <h1 className='text-[45px] text-richblack-100 font-bold capitalize m-4'>Enter the Lobby</h1>
+        
+        <div className='border border-richblack-600 text-richblack-300 rounded-xl p-7 lg:p-14'>
 
-          <label htmlFor="email"> Email ID</label>
+        <form onSubmit={handleSubmitForm} className='flex flex-col gap-4'
+              style={{ width: '400px' }} >
+
+          <label htmlFor="email" className='text-4xl leading-10 font-semibold text-richblack-5 pb-3'> Email ID </label>
           <input type='email' 
           id='email' 
           value={email} 
           onChange={e => setEmail(e.target.value)}
+          className='rounded-lg bg-richblack-700 p-3 text-[16px] leading-[24px] text-richblack-5 shadow-[0_1px_0_0] shadow-white/50 placeholder:text-richblack-400 focus:outline-none' 
            />
           <br/>
           
-          <label htmlFor='room'> Room Number</label>
+          <label htmlFor='room' className='text-4xl leading-10 font-semibold text-richblack-5 '> Room Number</label>
           <input type='text' 
           id='room'
           value={room}
-          onChange={e => setRoom(e.target.value)} 
+          onChange={e => setRoom(e.target.value)}
+          className='rounded-lg bg-richblack-700 p-3 text-[16px] leading-[24px] text-richblack-5 shadow-[0_1px_0_0] shadow-white/50 placeholder:text-richblack-400 focus:outline-none' 
           />
 
           <br/>
-          <button>Join</button>
+          <button className='bg-yellow-100 cursor-pointer gap-x-2 rounded-md py-2 px-5 font-semibold text-richblack-900 '>Join</button>
         </form>
+        </div>
     </div>
   )
 }

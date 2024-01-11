@@ -125,33 +125,50 @@ export const Room = () => {
    
 
   return (
-    <div>
-        <h1>Room Page</h1>
-        <h4>{remoteSocketId ? "Connected" : "No one in room"}</h4>
+    <div className='flex flex-col items-center h-full w-auto'>
+        <h1 className='text-white text-[35px] flex  font-bold justify-center   w-full p-2'>{`Our Room`}</h1>
+        <h4 className={`text-white-100 text-[20px] flex justify-center font-bold w-full ${remoteSocketId ? 'bg-caribbeangreen-700' : 'bg-pink-500 w-full justify-center items-center'}`}>
+        {remoteSocketId ? "Connected" : "No one in room"}
+        
+        </h4>
+       
+
+        <div className='flex gap-3 m-4'>
         {
-            myStream && <button onClick={sendStream}> Send Stream</button>
+            myStream && <button onClick={sendStream}
+            className='bg-yellow-100 cursor-pointer gap-x-2 rounded-md py-2 px-5 font-semibold text-richblack-900 mt-2'> 
+            Send Stream
+            </button>
         }
         {/* Calling Button */}
         {
-            remoteSocketId && <button onClick={handleCallUser}>Call</button>
+            remoteSocketId && <button onClick={handleCallUser}
+            className='bg-pink-900  text-white cursor-pointer gap-x-2 rounded-md py-2 px-5 font-semibold mt-2'>Call</button>
         }
+        </div>
+
+        {/* Streaming */}
+        
         {
             myStream && (
                 <>
-                <h1>My Stream</h1>
+                <h1 className='text-[25px] font-inter font-bold'>My Stream</h1>
                 <ReactPlayer
                     width={"300px"} 
                     height={"400px"}
                     playing
                     muted 
-                    url={myStream} />
+                    url={myStream}
+                    
+                     />
+                     
                     </>
             )
         }
         {
             remoteStream && (
                 <>
-                <h1>Remote Stream</h1>
+                <h1 className='text-[25px] font-inter font-bold'>Remote Stream</h1>
                 <ReactPlayer
                     width={"300px"} 
                     height={"400px"}
@@ -161,6 +178,6 @@ export const Room = () => {
                     </>
             )
         }
-    </div>
+            </div>
   )
 }

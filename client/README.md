@@ -1,70 +1,58 @@
-# Getting Started with Create React App
+# Video Calling App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Welcome to the Video Calling App ! This project utilizes WebRTC and WebSocket technologies for real-time communication. Below is a brief overview of these technologies:
 
-## Available Scripts
+## WebRTC
 
-In the project directory, you can run:
+WebRTC (Web Real-Time Communication) is a free, open-source project that provides web browsers and mobile applications with real-time communication via simple application programming interfaces (APIs). It enables peer-to-peer audio, video, and data sharing directly between browsers without the need for plugins or additional software.
 
-### `npm start`
+In this project, WebRTC is used to facilitate real-time communication between clients, allowing for features such as video calls, voice calls, and data sharing.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## WebSocket
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+WebSocket is a communication protocol that provides full-duplex communication channels over a single TCP connection. It is designed to be implemented in web browsers and web servers and can be used to establish a persistent, low-latency communication channel between the client and the server.
 
-### `npm test`
+WebSocket is employed in this project to enable efficient and bi-directional communication between the server and clients. It ensures a seamless flow of real-time data updates and messages.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `npm run build`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Additional Notes
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- Ensure that your browser supports WebRTC for the best experience.
+- WebSocket requires a server that supports WebSocket connections. The server used in this pro
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `npm run eject`
+## Clone the Project
+git clone https://github.com/Saurabhgal19/Video-Calling-App.git
+cd your-project
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## Server Setup
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+1. Navigate to the server directory:
+-cd server
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+2. Start the server:
+ -npm start
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+ ## Client Setup
+ 
+ 1. Open a new terminal window.
+ 2. Navigate to the client directory:
 
-## Learn More
+  cd client
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+  3. start the client
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+  npm run start
 
-### Code Splitting
+  This will start the client application, and you can view it in your web browser at http://localhost:3001.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+Additional Notes
+Make sure you have Node.js and npm installed on your machine before running the commands.
 
-### Analyzing the Bundle Size
+You can customize the server and client ports in their respective configuration files if needed.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+Feel free to explore the project and make any necessary adjustments according to your requirements.
 
-### Making a Progressive Web App
+Happy coding!
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)

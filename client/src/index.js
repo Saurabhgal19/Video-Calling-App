@@ -13,6 +13,7 @@ root.render(
   <BrowserRouter>
   <SocketProvider>
     <App />
+
   </SocketProvider>
   </BrowserRouter>
 

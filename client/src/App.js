@@ -5,7 +5,7 @@ import { Room } from './screens/Room';
 
 function App() {
   return (
-    <div className="App">
+    <div className="w-full h-screen bg-richblack-900 flex flex-col  text-richblack-100">
      <Routes>
       <Route path='/' element={<Lobby/>}/>
       <Route path="/room/:roomId" element={<Room/>}/>
